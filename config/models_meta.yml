@@ -1,0 +1,10 @@
+available_gan_models:
+   -    id: xgboost_v1
+        name: XG Booos
+        available: True
+   -    id: RandomForest_v1
+        name: Random Forest
+        available: False
+   -    id: MS_LGBM_v1
+        name: MG LGBM
+        available: False

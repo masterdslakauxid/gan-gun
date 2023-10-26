@@ -1,0 +1,80 @@
+Archery: 
+  - version : Archery_20120515-155045
+    descr: This is the latest model
+    default: True
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+  - version: Archery_20120515-155045
+    descr: modele accmodating last week changes
+    default: False
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+  - version: Archery_20080515-155045
+    descr: model created 1 month ago.
+    default: False
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+Basketball: 
+  - version: Basketball_20120515-155045
+    descr: This is the latest model
+    default: False
+    d_model_file : "saved_model/Basketball_d_model_20120515-155045.h5"
+    g_model_file : "saved_model/Basketball_g_model_20120515-155045.h5"
+  - version: Basketball_20110415-155045
+    descr: modele accmodating last week changes
+    default: False
+    d_model_file : "saved_model/Basketball_d_model_20110415-155045.h5"
+    g_model_file : "saved_model/Basketball_g_model_20110415-155045.h5"
+  - version: Basketball_20100315-155045
+    descr: Model created 1 month ago. Have queries? Reach out to the modal developer at Debashish@gmail.com
+    default: True
+    d_model_file : "saved_model/Basketball_d_model_20100315-155045.h5"
+    g_model_file : "saved_model/Basketball_g_model_20110315-155045.h5"
+CricketShot: 
+  - version: CricketShot_date_timestamp
+    descr: This is the latest model
+    default: False
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+  - version: CricketShot_date_timestamp
+    descr: modele accmodating last week changes
+    default: True
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+  - version: CricketShot_date_timestamp
+    descr: model created 1 month ago.
+    default: False
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+HorseRace: 
+  - version : HorseRace_20120515-155045
+    descr: This is the latest model
+    default: True
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+  - version: HorseRace_20120515-155045
+    descr: modele accmodating last week changes
+    default: False
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+  - version: HorseRace_20080515-155045
+    descr: model created 1 month ago.
+    default: False
+    d_model_file : "saved_model/Archery_d_model.h5"
+    g_model_file : "saved_model/Archery_g_model.h5"
+IceDancing: 
+  - version : IceDancing_20120515-155045
+    descr: This is the latest model
+    default: True
+    d_model_file : "saved_model/IceDancing_d_model_20120515-155045.h5"
+    g_model_file : "saved_model/IceDancing_g_model_20120515-155045.h5"
+  - version: IceDancing_20120415-155045
+    descr: modele accmodating last week changes
+    default: False
+    d_model_file : "saved_model/IceDancing_d_model_20120415-155045.h5"
+    g_model_file : "saved_model/IceDancing_g_model_20120415-155045.h5"
+  - version: IceDancing_20080315-155045
+    descr: model created 1 month ago.
+    default: False
+    d_model_file : "saved_model/IceDancing_d_model_20080315-155045.h5"
+    g_model_file : "saved_model/IceDancing_g_model_20080315-155045.h5"
