@@ -29,8 +29,8 @@ def set_png_as_page_bg(png_file):
 
 set_png_as_page_bg('genAi.png')
 
-# image = Image.open('parsa-mahmoudi-8x2iLiQ6J_U-unsplash.jpg')
-# st.image(image, caption='IISc - Batch 5 - Capstone Group-1 project')
+image = Image.open('genAi.png')
+st.image(image, caption='')
 
 # st.write("Creator: User Neil Iris (@neil_ingham) from Unsplash")
 # st.write("License: Do whatever you want https://unsplash.com/license")
