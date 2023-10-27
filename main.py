@@ -1,7 +1,9 @@
 import streamlit as st
 from PIL import Image
 
-st.header("Group1 - Capstone project")
+
+st.title("  GAN based Videography")
+st.header("C5 - Group1-Capstone project")
 
 import base64
 

@@ -3,7 +3,7 @@ Archery:
 Basketball: 
   - enabled : True
 CricketShot: 
-  - enabled : False
+  - enabled : True
 HorseRace: 
   - enabled : False
 IceDancing: 
