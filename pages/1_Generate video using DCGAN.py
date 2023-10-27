@@ -145,11 +145,12 @@ with st.container():
     with st.container():
         
         st.write("#3 Generate the video")
+        with open(get_classified_lable_file_path(), 'r') as f:
+                classified_label = f.read()
+        st.markdown(f'The classified text for generating the video: <font style="color:blue;font-size:15px;">{classified_label}</font>', unsafe_allow_html=True)
+
         with st.expander("Advanced options for action versions"):    
             #New............................AK    
-            with open(get_classified_lable_file_path(), 'r') as f:
-                classified_label = f.read()
-            st.markdown(f'The classified text for generating the video: <font style="color:blue;font-size:15px;">{classified_label}</font>', unsafe_allow_html=True)
             
             # Choosing a version from various other versions
             manually_selected_action = ""
