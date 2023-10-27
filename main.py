@@ -2,8 +2,6 @@ import streamlit as st
 from PIL import Image
 
 
-st.title("  GAN based Videography")
-st.header("C5 - Group1-Capstone project")
 
 import base64
 
@@ -27,10 +25,17 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg('genAi.png')
-
-image = Image.open('genAi.png')
-st.image(image, caption='')
+with st.container():
+    col1, col2 = st.columns((2,1))
+    with col1:
+        st.title("  GAN based Videography")
+        st.header("C5 - Group1-Capstone project")
+        set_png_as_page_bg('genAi.png')
+        image = Image.open('genAi.png')
+        st.image(image, caption='')
+    with col2:
+        st.text("")               
+       
 
 # st.write("Creator: User Neil Iris (@neil_ingham) from Unsplash")
 # st.write("License: Do whatever you want https://unsplash.com/license")
