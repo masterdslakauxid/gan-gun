@@ -1,0 +1,10 @@
+Archery: 
+  - enabled : True
+Basketball: 
+  - enabled : True
+CricketShot: 
+  - enabled : False
+HorseRace: 
+  - enabled : False
+IceDancing: 
+  - enabled : False

@@ -15,53 +15,53 @@ Archery:
     d_model_file : "saved_model/Archery_d_model.h5"
     g_model_file : "saved_model/Archery_g_model.h5"
 Basketball: 
-  - version: Basketball_20120515-155045
+  - version: Basketball_20231027-155045
     descr: This is the latest model
-    default: False
-    d_model_file : "saved_model/Basketball_d_model_20120515-155045.h5"
-    g_model_file : "saved_model/Basketball_g_model_20120515-155045.h5"
-  - version: Basketball_20110415-155045
-    descr: modele accmodating last week changes
-    default: False
-    d_model_file : "saved_model/Basketball_d_model_20110415-155045.h5"
-    g_model_file : "saved_model/Basketball_g_model_20110415-155045.h5"
-  - version: Basketball_20100315-155045
-    descr: Model created 1 month ago. Have queries? Reach out to the modal developer at Debashish@gmail.com
     default: True
-    d_model_file : "saved_model/Basketball_d_model_20100315-155045.h5"
-    g_model_file : "saved_model/Basketball_g_model_20110315-155045.h5"
+    d_model_file : "saved_model/Basketball_d_model.h5"
+    g_model_file : "saved_model/Basketball_g_model.h5"
+  - version: Basketball_20231017-155045
+    descr: modele accmodating last week changes
+    d_model_file : "saved_model/Basketball_d_model_20231017-155045.h5"
+    g_model_file : "saved_model/Basketball_g_model_20231017-155045.h5"
+    default: False
+  - version: Basketball_20231007-155045
+    descr: Model created 1 month ago. Have queries? Reach out to the modal developer at Debashish@gmail.com
+    d_model_file : "saved_model/Basketball_d_model_20231007-155045.h5"
+    g_model_file : "saved_model/Basketball_g_model_20231007-155045.h5"
+    default: 
 CricketShot: 
   - version: CricketShot_date_timestamp
     descr: This is the latest model
-    default: False
-    d_model_file : "saved_model/Archery_d_model.h5"
-    g_model_file : "saved_model/Archery_g_model.h5"
+    default: True
+    d_model_file : "saved_model/CricketShot_d_model.h5"
+    g_model_file : "saved_model/CricketShot_g_model.h5"
   - version: CricketShot_date_timestamp
     descr: modele accmodating last week changes
-    default: True
-    d_model_file : "saved_model/Archery_d_model.h5"
-    g_model_file : "saved_model/Archery_g_model.h5"
+    default: False
+    d_model_file : "saved_model/CricketShot_d_model.h5"
+    g_model_file : "saved_model/CricketShot_g_model.h5"
   - version: CricketShot_date_timestamp
     descr: model created 1 month ago.
     default: False
-    d_model_file : "saved_model/Archery_d_model.h5"
-    g_model_file : "saved_model/Archery_g_model.h5"
+    d_model_file : "saved_model/CricketShot_d_model.h5"
+    g_model_file : "saved_model/CricketShot_g_model.h5"
 HorseRace: 
   - version : HorseRace_20120515-155045
     descr: This is the latest model
     default: True
-    d_model_file : "saved_model/Archery_d_model.h5"
-    g_model_file : "saved_model/Archery_g_model.h5"
+    d_model_file : "saved_model/HorseRace_d_model.h5"
+    g_model_file : "saved_model/HorseRace_g_model.h5"
   - version: HorseRace_20120515-155045
     descr: modele accmodating last week changes
     default: False
-    d_model_file : "saved_model/Archery_d_model.h5"
-    g_model_file : "saved_model/Archery_g_model.h5"
+    d_model_file : "saved_model/HorseRace_d_model.h5"
+    g_model_file : "saved_model/HorseRace_g_model.h5"
   - version: HorseRace_20080515-155045
     descr: model created 1 month ago.
     default: False
-    d_model_file : "saved_model/Archery_d_model.h5"
-    g_model_file : "saved_model/Archery_g_model.h5"
+    d_model_file : "saved_model/HorseRace_d_model.h5"
+    g_model_file : "saved_model/HorseRace_g_model.h5"
 IceDancing: 
   - version : IceDancing_20120515-155045
     descr: This is the latest model

@@ -20,7 +20,7 @@ from moviepy.editor import VideoFileClip
 import matplotlib.pyplot as plt
 
 #Custom import
-from pages.scripts.content.util import get_content_path, is_debug, is_info
+from pages.scripts.content.util import get_content_path, is_debug, is_info, get_version_models_for_ganpage
 
 #---------------------------------------------------------------------------
 IMG_H = 64
@@ -440,6 +440,75 @@ actions = {
 def exit_program():
     print("Exiting the program...")
     sys.exit(0)
+
+def generate_video_new(classified_label, version, show_images, overriden):
+    examples =""
+    n_samples = 25
+    latent_dim = 128
+    noise = np.random.normal(size=(n_samples, latent_dim))
+
+    d_model = build_discriminator()
+    g_model = build_generator(latent_dim)
+
+    actions = get_version_models_for_ganpage(classified_label, version, overriden)
+    
+    
+
+    L = load_classified_label(classified_label)
+    print("L ----> ", L )
+
+
+   # if L in actions:
+    d_model_file = os.path.join(get_content_path(), actions[0])
+    g_model_file = os.path.join(get_content_path(), actions[1])
+
+    print("Debug :-  Models loaded based on User selection actions", d_model_file, g_model_file)    
+    # print("d_model_file", d_model_file)
+    # print("d_model_file", g_model_file)
+  
+    if os.path.exists(d_model_file) == True:
+      d_model.load_weights(d_model_file)
+    else:
+      st.info(L + " discriminator model file does not exit")
+      exit_program()
+
+    if os.path.exists(g_model_file) == True:
+      g_model.load_weights(g_model_file)
+      examples = g_model.predict(noise)
+      save_examples(examples)
+
+      #Generate the video in avi
+      output_video_path = os.path.join(get_content_path(),'generated_videos', 'generated_video.avi')
+      if is_debug() == True:
+        print("output_video_path.......?" , output_video_path)
+
+      gen_video(output_video_path)
+
+      #Convert avi to mp4
+      clip = moviepy.VideoFileClip(output_video_path)
+      output_video_path_converted_mp4 = os.path.join(get_content_path(),'generated_videos', 'generated_video.mp4')
+      clip.write_videofile(output_video_path_converted_mp4)
+
+      with st.expander("Generated video"): 
+        #Show the video
+        video_file = open(output_video_path_converted_mp4, 'rb') #enter the filename with filepath
+        video_bytes = video_file.read() #reading the file
+        st.video(video_bytes, format='video/mp4', start_time=0) #displaying the video
+
+      if show_images:
+          with st.expander("Generated images"): 
+              for i in os.listdir(os.path.join(get_content_path(), "generated_images")):
+                  st.write(os.path.join(get_content_path(), "generated_images/") + i)
+                  st.image(cv2.imread(os.path.join(get_content_path(), "generated_images/") + i))   
+    else:
+        st.info(L + " generator model file does not exit")
+        exit_program()
+    # else:
+    #    st.info(" No trainned model is found for the action " + L)
+    #    exit_program()
+
+
+
 
 def generate_video(classified_label, show_images):
     

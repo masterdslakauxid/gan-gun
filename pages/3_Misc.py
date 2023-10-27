@@ -85,38 +85,20 @@ st.write("Get actions output ")
 
 
 def get_versions_for_ganpage(classified_action):
-   #models = get_availble_models()
-   #model = models[0] 
-   #classified_action =  "Archery"
-   #classified_action =  "Basketball"
-   #st.write ("Default model Id",model_id )
-  
    action_fname = os.path.join(Path.cwd(), 'config' , "action_config.yml")
    yaml = ruamel.yaml.YAML()
    yaml.indent(mapping=6, sequence=4)
    with open(action_fname) as fp:
         config = yaml.load(fp)
-        
-       # st.write(type(config))
-        
         actions = ["N/A"] 
-        
         for key in config:
-           # st.write("key ----->", key)
             if key == classified_action: 
                for item in config[key]:
                     if item['default'] == True:
                         actions.append(item['version'] + ":" + " (Default) ")
                     else:
                         actions.append(item['version'])                                                
-                # st.write(item['version'])
-                # st.write(item['descr'])
-                # st.write(item['default'])
-                # st.write(item['d_model_file'])
-                # st.write(item['g_model_file'])
                break
-               #
-        #st.write("actions for gan page", actions)
         return actions
 
 get_versions_for_ganpage("Archery")
@@ -127,8 +109,6 @@ def get_version_details_for_ganpage(classified_action, classified_version):
    yaml.indent(mapping=6, sequence=4)
    with open(action_fname) as fp:
         config = yaml.load(fp)
-        
-       # st.write(type(config))
         
         actions = [] 
         
@@ -144,53 +124,45 @@ def get_version_details_for_ganpage(classified_action, classified_version):
                         actions.append(item['descr'] + " : (Default) ")
                    else:
                       actions.append(item['descr'])
-                    # st.write(item['version'])
-                    # st.write(item['descr'])
-                # st.write(item['default'])
-                # st.write(item['d_model_file'])
-                # st.write(item['g_model_file'])
                break
-               #
-        #st.write("actions for gan page", actions)
         return actions
    
-def get_version_models_for_ganpage(classified_action, classified_version):
-   action_fname = os.path.join(Path.cwd(), 'config' , "action_config.yml")
-   yaml = ruamel.yaml.YAML()
-   yaml.indent(mapping=6, sequence=4)
-   with open(action_fname) as fp:
-        config = yaml.load(fp)
-        default_config_found=False
-        actions_models = [] 
-        for key in config:
-            st.write("key ----->", key)
-            if key == classified_action: 
-               for item in config[key]:
-                st.write("-->classified_version ", classified_version)
-                out = classified_version.split("_")
-                st.write("--> out ", out[1])
-                source = item['version'].split("_")
-                st.write("--> source['version'] ",source[1])    
-                st.write("--> compare ", out[1] == source[1]) 
-                if out[1] == source[1]:
-                   st.write("entering  out == source  - true")
-                   #if bool(item['default']) == True:
-                   st.write("item['default']", item['default'])
-                   actions_models.append(item['d_model_file'])
-                   actions_models.append(item['g_model_file'])
-                   default_config_found = True
-                   break
-            
-        if default_config_found == False:
-            st.write("No default models fosund. Please make one model as a default ones", actions_models)
-        else:
-            st.write("Loading these modules", actions_models)
-        return actions_models
+#Completed : Move to util
+# def get_version_models_for_ganpage(classified_action, classified_version, get_default):
+#    action_fname = os.path.join(Path.cwd(), 'config' , "action_config.yml")
+#    yaml = ruamel.yaml.YAML()
+#    yaml.indent(mapping=6, sequence=4)
+#    with open(action_fname) as fp:
+#         config = yaml.load(fp)
+#         default_config_found = False
+#         actions_models = [] 
+#         for key in config:
+#             print("key ----->", key)
+#             if key == classified_action: 
+#                for item in config[key]:
+#                 if get_default == False:
+#                     out = classified_version.split("_")
+#                     source = item['version'].split("_")
+#                     if out[1] == source[1]:
+#                         actions_models.append(item['d_model_file'])
+#                         actions_models.append(item['g_model_file'])
+#                         break
+#                     else:
+#                         st.write("No matching model finding in this iteration")    
+#                 else:
+#                     if bool(item['default']) == True:
+#                         actions_models.append(item['d_model_file'])
+#                         actions_models.append(item['g_model_file'])
+#                         default_config_found = True
+#                         break
+#         if default_config_found == False:
+#             print("No default models fosund. Please make one model as a default ones", actions_models)
+#         else:
+#             print("Loading these modules", actions_models)
+#         return actions_models
 
-#get_version_model_details_for_ganpage()
-
-#st.write ("Action- Version details for the GAN page")
-#get_version_model_details_for_ganpage("Archery", "Archery_20120515-155045")
+# get_version_models_for_ganpage("Basketball", "Basketball_20231027-155045", False)
+# get_version_models_for_ganpage("Basketball", "Basketball_20231027-155045", True)
 
 
 # def gen_video(): 

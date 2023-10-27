@@ -81,7 +81,7 @@ def get_content_path(): #c:/ab/content
 
 # Completed
 def get_action_list():
-   action_fname = os.path.join(Path.cwd(), 'config' , "models_config.yml")
+   action_fname = os.path.join(Path.cwd(), 'config' , "action_config.yml")
    yaml = ruamel.yaml.YAML()
    yaml.indent(mapping=6, sequence=4)
    with open(action_fname) as fp:
@@ -92,4 +92,38 @@ def get_action_list():
    return actions
 
 get_action_list()
+
+#===============================
+def get_version_models_for_ganpage(classified_action, classified_version, get_default):
+   action_fname = os.path.join(Path.cwd(), 'config' , "action_config.yml")
+   yaml = ruamel.yaml.YAML()
+   yaml.indent(mapping=6, sequence=4)
+   with open(action_fname) as fp:
+        config = yaml.load(fp)
+        default_config_found = False
+        actions_models = [] 
+        for key in config:
+            print("key ----->", key)
+            if key == classified_action: 
+               for item in config[key]:
+                if get_default == False:
+                    print("classified_version ------> from util ", classified_version)
+                    out = classified_version.split("_")
+                    source = item['version'].split("_")
+                    if out[1] == source[1]:
+                        actions_models.append(item['d_model_file'])
+                        actions_models.append(item['g_model_file'])
+                        break
+                    else:
+                        print("No matching model finding in this iteration")    
+                else:
+                    if bool(item['default']) == True:
+                        actions_models.append(item['d_model_file'])
+                        actions_models.append(item['g_model_file'])
+                        default_config_found = True
+                        break
+        if get_default == True and len(actions_models)== 0:
+            print("No default models found. Please make one model as a default ones", actions_models)
+                    
+        return actions_models
 
