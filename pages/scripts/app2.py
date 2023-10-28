@@ -451,7 +451,7 @@ def generate_video_new(classified_label, version, show_images, overriden):
     g_model = build_generator(latent_dim)
 
     actions = get_version_models_for_ganpage(classified_label, version, overriden)
-    
+    print("Actions ----> ", actions )
     
 
     L = load_classified_label(classified_label)
@@ -463,8 +463,8 @@ def generate_video_new(classified_label, version, show_images, overriden):
     g_model_file = os.path.join(get_content_path(), actions[1])
 
     print("Debug :-  Models loaded based on User selection actions", d_model_file, g_model_file)    
-    # print("d_model_file", d_model_file)
-    # print("d_model_file", g_model_file)
+    print("d_model_file", d_model_file)
+    print("d_model_file", g_model_file)
   
     if os.path.exists(d_model_file) == True:
       d_model.load_weights(d_model_file)
