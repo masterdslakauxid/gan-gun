@@ -10,3 +10,5 @@ IceDancing:
   - enabled : True
 Kayaking: 
   - enabled : True
+PlayingTabla: 
+  - enabled : True
