@@ -8,3 +8,5 @@ HorseRace:
   - enabled : True
 IceDancing: 
   - enabled : True
+Kayaking: 
+  - enabled : True
