@@ -84,3 +84,9 @@ Kayaking:
     default: True
     d_model_file : "saved_model/Kayaking_d_model.h5"
     g_model_file : "saved_model/Kayaking_g_model.h5"
+PlayingTabla:
+  - version : PlayingTabla_20120515-155045
+    descr: This is the latest model
+    default: True
+    d_model_file : "saved_model/PlayingTabla_d_model.h5"
+    g_model_file : "saved_model/PlayingTabla_g_model.h5"
