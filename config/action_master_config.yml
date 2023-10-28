@@ -5,6 +5,6 @@ Basketball:
 CricketShot: 
   - enabled : True
 HorseRace: 
-  - enabled : False
+  - enabled : True
 IceDancing: 
-  - enabled : False
+  - enabled : True
