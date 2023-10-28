@@ -31,7 +31,7 @@ Basketball:
     g_model_file : "saved_model/Basketball_g_model.h5"
     default: 
 CricketShot: 
-  - version: CricketShot_date_timestamp
+  - version: CricketShot__20231027-155045
     descr: This is the latest model
     default: True
     d_model_file : "saved_model/CricketShot_d_model.h5"
