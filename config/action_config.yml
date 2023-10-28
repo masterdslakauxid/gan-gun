@@ -78,3 +78,9 @@ IceDancing:
     default: False
     d_model_file : "saved_model/IceDancing_d_model.h5"
     g_model_file : "saved_model/IceDancing_g_model.h5"
+Kayaking:
+  - version : Kayaking_20120515-155045
+    descr: This is the latest model
+    default: True
+    d_model_file : "saved_model/Kayaking_d_model.h5"
+    g_model_file : "saved_model/Kayaking_g_model.h5"
